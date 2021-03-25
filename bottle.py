@@ -3,19 +3,19 @@ class Bottle(metaclass=ABCMeta):
     @abstractmethod
     def __init__(self,brand):
         self.brand = brand
-        self.closed = False
-        self.filled = False
-        self.labeled = False
+        self.cap = None
+        self.drink = None
+        self.label = None
     @abstractmethod
-    def close(self):
-        if not self.closed: 
-            self.closed = True
+    def close(self,cap):
+        if self.cap is None: 
+            self.cap = cap
     @abstractmethod
-    def fill(self):
-        if not self.closed:
-            if not self.filled:
-                self.filled = True
+    def fill(self,drink):
+        if self.cap is None:
+            if self.drink is None:
+                self.drink = drink     
     @abstractmethod
-    def applylabel(self):
-        if not self.labeled:
-            self.labeled = True
+    def applylabel(self,label):
+        if self.label is None:
+            self.label = label
