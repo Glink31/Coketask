@@ -1,4 +1,4 @@
 from cap import Cap
 class ColaCap(Cap):
-    def __init__(self,brand="Cola"):
-        super.__init__()
+    def __init__(self):
+        super().__init__("Coca-Cola")

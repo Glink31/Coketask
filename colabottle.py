@@ -1,7 +1,7 @@
 from bottle import Bottle
 class ColaBottle(Bottle):
-    def __init__(self,brand="Cola"):
-        super.__init__()
+    def __init__(self):
+        super().__init__("Coca-Cola")
     def close(self):
         super.close()
     def fill(self):
