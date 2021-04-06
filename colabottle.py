@@ -10,8 +10,11 @@ class ColaBottle(Bottle):
         super().applylabel(label)
     def copy(self):
         CopyBottle = ColaBottle()
-        CopyBottle.label = self.label.copy()
-        CopyBottle.cap = self.cap.copy()
-        CopyBottle.drink = self.drink.copy()
+        if self.label is not None:
+            CopyBottle.label = self.label.copy()
+        if self.cap is not None:
+            CopyBottle.cap = self.cap.copy()
+        if self.drink is not None:
+            CopyBottle.drink = self.drink.copy()
         return CopyBottle
     
