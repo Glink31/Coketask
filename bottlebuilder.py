@@ -1,10 +1,9 @@
-from abc import ABCMeta, abstractmethod
-class BottleBuilder(metaclass=ABCMeta):
+class BottleBuilder():
     def __init__(self,factory):
         self.bottle = None
         self.factory = factory
     def takebottle(self):
-        self.bottle = self.factory.createbottle(self)
+        self.bottle = self.factory.createbottle()
         print(f"Взяли бутылку {self.bottle.brand}")
     def fillbottle(self):
         if self.bottle is not None:
@@ -18,3 +17,6 @@ class BottleBuilder(metaclass=ABCMeta):
         if self.bottle is not None:
             label = self.factory.createlabel()
             self.bottle.applylabel(label)
+    def BuildProduct(self):
+        Product = self.bottle.copy()
+        return Product
